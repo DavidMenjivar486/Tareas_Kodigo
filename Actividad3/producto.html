@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de productos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.4.3/dist/css/bootstrap.min.css"
+      integrity="sha384-..."
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" min-vh-100 d-flex justify-content-center align-items-center>
+      <div class="mx-auto col-10 col-md-8 col-lg-6">
+        <form class="row g-3 needs-validation">
+          <fieldset>
+            <legend>REGISTRO DE PRODUCTOS</legend>
+              <div class="mb-3">
+                <label for="code" class="form-label">Código:</label>
+                <input type="text" class="form-control" id="code" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label">Descripción:</label>
+                <input type="text" class="form-control" id="description" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="barcode" class="form-label">Código de Barra:</label>
+                <input type="text" class="form-control" id="barcode" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="unitprice" class="form-label">Precio unitario:</label>
+                <input type="text" class="form-control" id="unitprice" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="stock" class="form-label">Stock:</label>
+                <input type="text" class="form-control" id="stock" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="supplier" class="form-label">Proveedor:</label>
+                <input type="text" class="form-control" id="supplier" required/>
+              </div>
+
+              <div class="mb-3" style="padding-right: 26%;">
+                <label for="status" class="form-label">Estado:</label>
+                <input type="checkbox" class="form-control" id="status" value="0" required/>
+              </div>
+
+              <div class="mb-3">
+                <label for="category" class="form-label">Categoría:</label>
+                <select id="category" name="category" required>
+                  <option selected disabled value="">Escoga una categoría</option>
+                    <option value="category1">category1</option>
+                    <option value="category2">category2</option>
+                    <option value="category3">category3</option>
+                    <option value="category4">category4</option>
+                </select>
+              </div>
+
+              <div class="mb-3 ">
+                <button class="cancel" formaction="index.html" text-align="right">Cancelar</button>
+                <button class="save" type="submit" formaction="save.html">Guardar</button>
+              </div>
+
+          </fieldset>
+        </form>
+      </div>
+  </div>
+
+
+  <script>(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()</script>
+</body>
+</html>
